@@ -58,7 +58,7 @@ below are computed on the held-out 20% test set (`test_data.csv`).
 
 ## Live Streamlit App
 
-> `<PASTE YOUR DEPLOYED STREAMLIT APP URL HERE>`
+> https://ml-assignment-2-g77jbyn63ltgsv8fcteeud.streamlit.app/
 
 The app lets you:
 1. Upload a test CSV (same schema as `test_data.csv`, incl. the `income` label) — or use the bundled `test_data.csv` by default
