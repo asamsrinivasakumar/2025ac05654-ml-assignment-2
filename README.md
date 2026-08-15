@@ -30,7 +30,7 @@ interactive Streamlit app.
 
 ## c. GitHub Repository Link
 
-> https://github.com/asamsrinivasakumar/ml-assignment-2
+> https://github.com/asamsrinivasakumar/2025ac05654-ml-assignment-2
 
 ## d. Models Used
 
