@@ -67,6 +67,8 @@ def evaluate_on_uploaded_data(model, preprocessor, df):
         y_true = (y_true.astype(str).str.strip().str.replace(".", "", regex=False) == ">50K").astype(int)
 
     X_enc = preprocessor.transform(X).astype(np.float32)
+    if hasattr(X_enc, "toarray"):
+        X_enc = X_enc.toarray()
     y_pred = model.predict(X_enc)
     y_score = model.predict_proba(X_enc)[:, 1] if hasattr(model, "predict_proba") else y_pred
 
