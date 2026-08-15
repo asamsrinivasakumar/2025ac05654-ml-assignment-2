@@ -103,8 +103,13 @@ def main():
     model_choice = st.sidebar.selectbox("Model", list(MODEL_FILES.keys()))
 
     if uploaded is not None:
-        df = pd.read_csv(uploaded)
+        try:
+            df = pd.read_csv(uploaded)
+        except Exception as e:
+            st.sidebar.error(f"Could not read '{uploaded.name}' as CSV: {e}")
+            st.stop()
         source_label = uploaded.name
+        st.sidebar.success(f"Uploaded '{uploaded.name}' successfully ({len(df)} rows).")
     else:
         df = pd.read_csv(os.path.join(BASE_DIR, "test_data.csv"))
         source_label = "test_data.csv (bundled)"
@@ -114,7 +119,7 @@ def main():
         st.error(f"Uploaded file is missing required columns: {missing}")
         st.stop()
 
-    st.write(f"**Data source:** {source_label} &nbsp;|&nbsp; **Rows:** {len(df)}")
+    st.success(f"**Data source:** {source_label} &nbsp;|&nbsp; **Rows:** {len(df)}")
     with st.expander("Preview data"):
         st.dataframe(df.head(20))
 
