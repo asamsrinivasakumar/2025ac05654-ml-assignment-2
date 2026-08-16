@@ -97,9 +97,3 @@ pip install -r requirements.txt
 python model/train_models.py   # retrains all 5 models, regenerates test_data.csv + metrics.json
 streamlit run app.py
 ```
-
-## Deployment (Streamlit Community Cloud)
-
-1. Push this folder to a public GitHub repository
-2. Go to [streamlit.io/cloud](https://streamlit.io/cloud) and sign in with GitHub
-3. "New app" → select the repository/branch → set main file to `app.py` → Deploy
